@@ -81,6 +81,18 @@
 											<span>Soy</span>
 											Estudiante
 										</label>
+										<label class="btn">
+											<input type="radio" name="options" id="user" />
+											<div class="icon">
+												<img
+													src="Public/Assets/Images/person.svg"
+													class="svg"
+													alt=""
+												/>
+											</div>
+											<span>Soy</span>
+											Administrador
+										</label>
 									</div>
 								</div>
 								<div class="input-group custom">

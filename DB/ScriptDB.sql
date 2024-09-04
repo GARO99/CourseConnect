@@ -1,13 +1,13 @@
 CREATE TABLE Faculty (
     FacultyId BIGSERIAL NOT NULL,
-    FacultyName VARCHAR(255) NOT NULL,
+    FacultyName VARCHAR(60) NOT NULL,
     PRIMARY KEY (FacultyId)
 );
 
 CREATE TABLE Unity (
     UnityId BIGSERIAL NOT NULL,
     FacultyId BIGSERIAL NOT NULL,
-    UnityName VARCHAR(255) NOT NULL,
+    UnityName VARCHAR(60) NOT NULL,
     PRIMARY KEY (UnityId),
     FOREIGN KEY (FacultyId) REFERENCES Faculty(FacultyId)
 );
@@ -23,24 +23,24 @@ CREATE TABLE AcademicPeriod (
 CREATE TABLE AcademicProgram (
     AcademicProgramId BIGSERIAL NOT NULL,
     UnityId BIGSERIAL NOT NULL,
-    AcademicProgramName VARCHAR(255) NOT NULL,
+    AcademicProgramName VARCHAR(100) NOT NULL,
     PRIMARY KEY (AcademicProgramId),
     FOREIGN KEY (UnityId) REFERENCES Unity(UnityId)
 );
 
 CREATE TABLE Role (
     RoleId BIGSERIAL NOT NULL,
-    RoleName VARCHAR(255) NOT NULL,
+    RoleName VARCHAR(20) NOT NULL,
     PRIMARY KEY (RoleId)
 );
 
 CREATE TABLE Users (
     UserId BIGSERIAL NOT NULL,
     RoleId BIGSERIAL NOT NULL,
-    FirstName VARCHAR(255) NOT NULL,
-    LastName VARCHAR(255) NOT NULL,
-    UserName VARCHAR(255) NOT NULL,
-    UserPassword VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(60) NOT NULL,
+    LastName VARCHAR(60) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Password VARCHAR(64) NOT NULL,
     PRIMARY KEY (UserId),
     FOREIGN KEY (RoleId) REFERENCES Role(RoleId)
 );
@@ -48,13 +48,13 @@ CREATE TABLE Users (
 CREATE TABLE Signature (
     SignatureId BIGSERIAL NOT NULL,
     UnityId BIGSERIAL NOT NULL,
-    SignatureName VARCHAR(255) NOT NULL,
+    SignatureName VARCHAR(60) NOT NULL,
     PRIMARY KEY (SignatureId),
     FOREIGN KEY (UnityId) REFERENCES Unity(UnityId)
 );
 
 CREATE TABLE Instructor (
-    InstructorId BIGSERIAL NOT NULL,
+    InstructorId VARCHAR(15) NOT NULL,
     UserId BIGSERIAL NOT NULL,
     SignatureId BIGSERIAL NOT NULL,
     PRIMARY KEY (InstructorId),
@@ -65,10 +65,10 @@ CREATE TABLE Instructor (
 CREATE TABLE SignatureGroup (
     SignatureGroupId BIGSERIAL NOT NULL,
     AcademicPeriodId BIGSERIAL NOT NULL,
-    InstructorId BIGSERIAL NOT NULL,
+    InstructorId VARCHAR(15) NOT NULL,
     SignatureId BIGSERIAL NOT NULL,
     AvailablePlaces INT NOT NULL,
-    GroupName VARCHAR(255) NOT NULL,
+    GroupName VARCHAR(20) NOT NULL,
     PRIMARY KEY (SignatureGroupId),
     FOREIGN KEY (AcademicPeriodId) REFERENCES AcademicPeriod(AcademicPeriodId),
     FOREIGN KEY (InstructorId) REFERENCES Instructor(InstructorId),
@@ -86,7 +86,7 @@ CREATE TABLE SignatureProgram (
 
 CREATE TABLE Building (
     BuildingId BIGSERIAL NOT NULL,
-    BuildingNumber INT NOT NULL,
+    BuildingName VARCHAR(60) NOT NULL,
     PRIMARY KEY (BuildingId)
 );
 
@@ -104,16 +104,16 @@ CREATE TABLE SignatureGroupSchedule (
     SignatureGroupScheduleId BIGSERIAL NOT NULL,
     SignatureGroupId BIGSERIAL NOT NULL,
     ClassroomId BIGSERIAL,
-    StartHour VARCHAR(255) NOT NULL,
-    EndHour VARCHAR(255) NOT NULL,
-    ClassDay VARCHAR(255) NOT NULL,
+    StartHour TIME NOT NULL,
+    EndHour TIME NOT NULL,
+    ClassDay INT CHECK (ClassDay >= 1 AND ClassDay <= 7) NOT NULL,
     PRIMARY KEY (SignatureGroupScheduleId),
     FOREIGN KEY (SignatureGroupId) REFERENCES SignatureGroup(SignatureGroupId),
     FOREIGN KEY (ClassroomId) REFERENCES Classroom(ClassroomId)
 );
 
 CREATE TABLE Studious (
-    StudiousId BIGSERIAL NOT NULL,
+    StudiousId VARCHAR(15) NOT NULL,
     UserId BIGSERIAL NOT NULL,
     AcademicProgramId BIGSERIAL NOT NULL,
     PRIMARY KEY (StudiousId),
@@ -123,7 +123,7 @@ CREATE TABLE Studious (
 
 CREATE TABLE SignatureInscribed (
     SignatureGroupAttendanceId BIGSERIAL NOT NULL,
-    StudiousId BIGSERIAL NOT NULL,
+    StudiousId VARCHAR(15) NOT NULL,
     SignatureGroupId BIGSERIAL NOT NULL,
     PRIMARY KEY (SignatureGroupAttendanceId, StudiousId, SignatureGroupId),
     FOREIGN KEY (StudiousId) REFERENCES Studious(StudiousId),

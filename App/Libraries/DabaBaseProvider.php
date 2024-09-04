@@ -67,6 +67,4 @@ class DabaBaseProvider{
         return $this->stmt->rowCount();
     }
   }
-  
-
 ?>
