@@ -13,7 +13,7 @@ class DabaBaseProvider{
     private $error;
 
     public function __construct(){
-        $dsn="mysql:host=". $this->host.";port=".$this->port.";dbname=".$this->db;
+        $dsn="pgsql:host=". $this->host.";port=".$this->port.";dbname=".$this->db;
         $options = array(\PDO::ATTR_PERSISTENT => true,\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
 
         try {
