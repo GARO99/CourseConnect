@@ -1,6 +1,9 @@
 <?php
 namespace Libraries;
 
+use PDO;
+use PDOException;
+
 class DabaBaseProvider{
 
     private $host= DB_HOST;
@@ -14,12 +17,12 @@ class DabaBaseProvider{
 
     public function __construct(){
         $dsn="pgsql:host=". $this->host.";port=".$this->port.";dbname=".$this->db;
-        $options = array(\PDO::ATTR_PERSISTENT => true,\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
+        $options = array(PDO::ATTR_PERSISTENT => true,\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
 
         try {
-            $this->dbh= new \PDO($dsn,$this->user,$this->pass,$options);
+            $this->dbh= new PDO($dsn,$this->user,$this->pass,$options);
             $this->dbh->exec("set names utf8");
-        } catch (\PDOException $e) {
+        } catch (PDOException $e) {
             $this->error= $e->getMessage();
             echo $this->error;
         }
@@ -33,16 +36,16 @@ class DabaBaseProvider{
         if (is_null($type)) {
             switch (TRUE) {
                 case is_int($value):
-                    $type = \PDO::PARAM_INT;
+                    $type = PDO::PARAM_INT;
                     break;
                 case is_bool($value):
-                    $type = \PDO::PARAM_BOOL;
+                    $type = PDO::PARAM_BOOL;
                     break;
                 case is_null($value):
-                    $type = \PDO::PARAM_NULL;
+                    $type = PDO::PARAM_NULL;
                     break;
             default:
-                $type = \PDO::PARAM_STR;
+                $type = PDO::PARAM_STR;
                 break;
             }
         }
@@ -55,12 +58,12 @@ class DabaBaseProvider{
 
     public function getrows(){
         $this->execute();
-        return $this->stmt->fetchAll(\PDO::FETCH_OBJ);
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function getrow(){
         $this->execute();
-        return $this->stmt->fetch(\PDO::FETCH_OBJ);
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
     public function rowC(){
