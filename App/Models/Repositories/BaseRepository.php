@@ -2,6 +2,10 @@
 namespace Repositories;
 use Repositories\Contracts\IRepository;
 use Libraries\DabaBaseProvider;
+use Exception;
+use ReflectionClass;
+use DateTime;
+
 
 class BaseRepository implements IRepository {
     protected DabaBaseProvider $db;
@@ -62,7 +66,36 @@ class BaseRepository implements IRepository {
     }
 
     protected function mapToEntity(object $row): object {
-        return new $this->entityClass(...(array) $row);
+        $entity = new $this->entityClass();
+        $reflection = new ReflectionClass($entity);
+    
+        foreach ($row as $column => $value) {
+            $property = lcfirst($column); 
+
+            if ($reflection->hasProperty($property)) {
+                $prop = $reflection->getProperty($property);
+                $prop->setAccessible(true); 
+
+                if ($this->isDateTimeColumn($value)) {
+                    $value = new DateTime($value);
+                }
+
+                $prop->setValue($entity, $value);
+            }
+        }
+    
+        return $entity;
+    }
+
+    private function isDateTimeColumn($value): bool {
+        try {
+            if (is_string($value) && DateTime::createFromFormat('Y-m-d H:i:s', $value)) {
+                return true;
+            }
+        } catch (Exception $e) {
+            return false;
+        }   
+        return false;
     }
 }
 ?>
