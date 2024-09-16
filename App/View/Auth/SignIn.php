@@ -35,7 +35,7 @@
 				class="container-fluid d-flex justify-content-between align-items-center"
 			>
 				<div class="brand-logo">
-					<a href="login.html">
+					<a href="SignIn">
 						<img  src="Public/Assets/Images/Logo-UMB-Blog-1.png" alt="" />
 					</a>
 				</div>		
@@ -148,9 +148,10 @@
 										-->
 											<a
 												class="btn btn-primary btn-lg btn-block"
-												href="index.html"
+												href="Home"
 												>Iniciar Sesion</a
 											>
+											<a href=""></a>
 										</div>
 										<div
 											class="font-16 weight-600 pt-10 pb-10 text-center"
@@ -167,9 +168,9 @@
 			</div>
 		</div>
 		<!-- js -->
-		<script src="Public/Assets/JS/Auth/Sing_In/core.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/script.min.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/process.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/layout-settings.js"></script>
+		<script src="<?php echo RUTURL?>Assets/JS/Auth/Sing_In/core.js"></script>
+		<script src="<?php echo RUTURL?>Assets/JS/Auth/Sing_In/script.min.js"></script>
+		<script src="<?php echo RUTURL?>Assets/JS/Auth/Sing_In/process.js"></script>
+		<script src="<?php echo RUTURL?>Assets/JS/Auth/Sing_In/layout-settings.js"></script>
 	</body>
 </html>

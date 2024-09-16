@@ -16,5 +16,5 @@ define('RUTURL','http://localhost/CourseConnect/');
 //Web site name
 define('WEBNAME', 'Inscripción de Materias');
 //================================
-
+define('ASSETSURL','http://localhost/CourseConnect/public/assets/');
 ?>
