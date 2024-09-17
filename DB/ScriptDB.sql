@@ -1,131 +1,129 @@
-CREATE TABLE Faculty (
-    FacultyId BIGSERIAL NOT NULL,
-    FacultyName VARCHAR(60) NOT NULL,
-    PRIMARY KEY (FacultyId)
+CREATE TABLE faculty (
+    id BIGSERIAL NOT NULL,
+    faculty_name VARCHAR(60) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE Unity (
-    UnityId BIGSERIAL NOT NULL,
-    FacultyId BIGSERIAL NOT NULL,
-    UnityName VARCHAR(60) NOT NULL,
-    PRIMARY KEY (UnityId),
-    FOREIGN KEY (FacultyId) REFERENCES Faculty(FacultyId)
+CREATE TABLE unity (
+    id BIGSERIAL NOT NULL,
+    faculty_id BIGSERIAL NOT NULL,
+    unity_name VARCHAR(60) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (faculty_id) REFERENCES faculty(id)
 );
 
-CREATE TABLE AcademicPeriod (
-    AcademicPeriodId SERIAL NOT NULL,
-    Description VARCHAR(255) NOT NULL,
-    StartDate DATE NOT NULL,
-    EndDate DATE NOT NULL,
-    PRIMARY KEY (AcademicPeriodId)
+CREATE TABLE academic_period (
+    id SERIAL NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE AcademicProgram (
-    AcademicProgramId BIGSERIAL NOT NULL,
-    UnityId BIGSERIAL NOT NULL,
-    AcademicProgramName VARCHAR(100) NOT NULL,
-    PRIMARY KEY (AcademicProgramId),
-    FOREIGN KEY (UnityId) REFERENCES Unity(UnityId)
+CREATE TABLE academic_program (
+    id BIGSERIAL NOT NULL,
+    unity_id BIGSERIAL NOT NULL,
+    academic_program_name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (unity_id) REFERENCES unity(id)
 );
 
-CREATE TABLE Role (
-    RoleId BIGSERIAL NOT NULL,
-    RoleName VARCHAR(20) NOT NULL,
-    PRIMARY KEY (RoleId)
+CREATE TABLE role (
+    id BIGSERIAL NOT NULL,
+    role_name VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE Users (
-    UserId BIGSERIAL NOT NULL,
-    RoleId BIGSERIAL NOT NULL,
-    FirstName VARCHAR(60) NOT NULL,
-    LastName VARCHAR(60) NOT NULL,
-    Email VARCHAR(100) NOT NULL,
-    Password VARCHAR(64) NOT NULL,
-    PRIMARY KEY (UserId),
-    FOREIGN KEY (RoleId) REFERENCES Role(RoleId)
+CREATE TABLE users (
+    id BIGSERIAL NOT NULL,
+    role_id BIGSERIAL NOT NULL,
+    first_name VARCHAR(60) NOT NULL,
+    last_name VARCHAR(60) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(64) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
-CREATE TABLE Signature (
-    SignatureId BIGSERIAL NOT NULL,
-    UnityId BIGSERIAL NOT NULL,
-    SignatureName VARCHAR(60) NOT NULL,
-    PRIMARY KEY (SignatureId),
-    FOREIGN KEY (UnityId) REFERENCES Unity(UnityId)
+CREATE TABLE signature (
+    id BIGSERIAL NOT NULL,
+    unity_id BIGSERIAL NOT NULL,
+    signature_name VARCHAR(60) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (unity_id) REFERENCES unity(id)
 );
 
-CREATE TABLE Instructor (
-    InstructorId VARCHAR(15) NOT NULL,
-    UserId BIGSERIAL NOT NULL,
-    SignatureId BIGSERIAL NOT NULL,
-    PRIMARY KEY (InstructorId),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId),
-    FOREIGN KEY (SignatureId) REFERENCES Signature(SignatureId)
+CREATE TABLE instructor (
+    id VARCHAR(15) NOT NULL,
+    user_id BIGSERIAL NOT NULL,
+    signature_id BIGSERIAL NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (signature_id) REFERENCES signature(id)
 );
 
-CREATE TABLE SignatureGroup (
-    SignatureGroupId BIGSERIAL NOT NULL,
-    AcademicPeriodId BIGSERIAL NOT NULL,
-    InstructorId VARCHAR(15) NOT NULL,
-    SignatureId BIGSERIAL NOT NULL,
-    AvailablePlaces INT NOT NULL,
-    GroupName VARCHAR(20) NOT NULL,
-    PRIMARY KEY (SignatureGroupId),
-    FOREIGN KEY (AcademicPeriodId) REFERENCES AcademicPeriod(AcademicPeriodId),
-    FOREIGN KEY (InstructorId) REFERENCES Instructor(InstructorId),
-    FOREIGN KEY (SignatureId) REFERENCES Signature(SignatureId)
+CREATE TABLE signature_group (
+    id BIGSERIAL NOT NULL,
+    academic_period_id BIGSERIAL NOT NULL,
+    instructor_id VARCHAR(15) NOT NULL,
+    signature_id BIGSERIAL NOT NULL,
+    available_places INT NOT NULL,
+    group_name VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (academic_period_id) REFERENCES academic_period(id),
+    FOREIGN KEY (instructor_id) REFERENCES instructor(id),
+    FOREIGN KEY (signature_id) REFERENCES signature(id)
 );
 
-CREATE TABLE SignatureProgram (
-    SignatureProgramId BIGSERIAL NOT NULL,
-    AcademicProgramId BIGSERIAL NOT NULL,
-    SignatureId BIGSERIAL NOT NULL,
-    PRIMARY KEY (SignatureProgramId),
-    FOREIGN KEY (AcademicProgramId) REFERENCES AcademicProgram(AcademicProgramId),
-    FOREIGN KEY (SignatureId) REFERENCES Signature(SignatureId)
+CREATE TABLE signature_program (
+    id BIGSERIAL NOT NULL,
+    academic_program_id BIGSERIAL NOT NULL,
+    signature_id BIGSERIAL NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (academic_program_id) REFERENCES academic_program(id),
+    FOREIGN KEY (signature_id) REFERENCES signature(id)
 );
 
-CREATE TABLE Building (
-    BuildingId BIGSERIAL NOT NULL,
-    BuildingName VARCHAR(60) NOT NULL,
-    PRIMARY KEY (BuildingId)
+CREATE TABLE building (
+    id BIGSERIAL NOT NULL,
+    building_name VARCHAR(60) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE Classroom (
-    ClassroomId BIGSERIAL NOT NULL,
-    BuildingId BIGSERIAL NOT NULL,
-    ClassroomNumber INT NOT NULL,
-    PRIMARY KEY (ClassroomId),
-    FOREIGN KEY (BuildingId) REFERENCES Building(BuildingId)
+CREATE TABLE classroom (
+    id BIGSERIAL NOT NULL,
+    building_id BIGSERIAL NOT NULL,
+    classroom_number INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (building_id) REFERENCES building(id)
 );
 
-
-
-CREATE TABLE SignatureGroupSchedule (
-    SignatureGroupScheduleId BIGSERIAL NOT NULL,
-    SignatureGroupId BIGSERIAL NOT NULL,
-    ClassroomId BIGSERIAL,
-    StartHour TIME NOT NULL,
-    EndHour TIME NOT NULL,
-    ClassDay INT CHECK (ClassDay >= 1 AND ClassDay <= 7) NOT NULL,
-    PRIMARY KEY (SignatureGroupScheduleId),
-    FOREIGN KEY (SignatureGroupId) REFERENCES SignatureGroup(SignatureGroupId),
-    FOREIGN KEY (ClassroomId) REFERENCES Classroom(ClassroomId)
+CREATE TABLE signature_group_schedule (
+    id BIGSERIAL NOT NULL,
+    signature_group_id BIGSERIAL NOT NULL,
+    classroom_id BIGSERIAL,
+    start_hour TIME NOT NULL,
+    end_hour TIME NOT NULL,
+    class_day INT CHECK (class_day >= 1 AND class_day <= 7) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (signature_group_id) REFERENCES signature_group(id),
+    FOREIGN KEY (classroom_id) REFERENCES classroom(id)
 );
 
-CREATE TABLE Studious (
-    StudiousId VARCHAR(15) NOT NULL,
-    UserId BIGSERIAL NOT NULL,
-    AcademicProgramId BIGSERIAL NOT NULL,
-    PRIMARY KEY (StudiousId),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId),
-    FOREIGN KEY (AcademicProgramId) REFERENCES AcademicProgram(AcademicProgramId)
+CREATE TABLE studious (
+    id VARCHAR(15) NOT NULL,
+    user_id BIGSERIAL NOT NULL,
+    academic_program_id BIGSERIAL NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (academic_program_id) REFERENCES academic_program(id)
 );
 
-CREATE TABLE SignatureInscribed (
-    SignatureGroupAttendanceId BIGSERIAL NOT NULL,
-    StudiousId VARCHAR(15) NOT NULL,
-    SignatureGroupId BIGSERIAL NOT NULL,
-    PRIMARY KEY (SignatureGroupAttendanceId, StudiousId, SignatureGroupId),
-    FOREIGN KEY (StudiousId) REFERENCES Studious(StudiousId),
-    FOREIGN KEY (SignatureGroupId) REFERENCES SignatureGroup(SignatureGroupId)
+CREATE TABLE signature_inscribed (
+    id BIGSERIAL NOT NULL,
+    studious_id VARCHAR(15) NOT NULL,
+    signature_group_id BIGSERIAL NOT NULL,
+    PRIMARY KEY (id, studious_id, signature_group_id),
+    FOREIGN KEY (studious_id) REFERENCES studious(id),
+    FOREIGN KEY (signature_group_id) REFERENCES signature_group(id)
 );

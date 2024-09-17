@@ -1,6 +1,6 @@
 <?php
-namespace Repositories;
-use Repositories\Contracts\IRepository;
+namespace Models\Repositories;
+use Models\Repositories\Contracts\IRepository;
 use Libraries\DabaBaseProvider;
 use Exception;
 use ReflectionClass;
@@ -12,10 +12,10 @@ class BaseRepository implements IRepository {
     protected string $table;
     protected string $entityClass;
 
-    public function __construct(DabaBaseProvider $db, string $table, string $entityClass) {
+    public function __construct(DabaBaseProvider $db, string $entityClass) {
         $this->db = $db;
-        $this->table = $table;
         $this->entityClass = $entityClass;
+        $this->table = $entityClass::getTableName();
     }
 
     public function all(): array {
@@ -28,6 +28,45 @@ class BaseRepository implements IRepository {
         $this->db->bind(':id', $id);
         $result = $this->db->getrow();
         return $result ? $this->mapToEntity($result) : null;
+    }
+
+    public function findBy(array $criteria): array {
+        $conditions = [];
+        $parameters = [];
+        foreach ($criteria as $column => $value) {
+            $conditions[] = "{$column} = :{$column}";
+            $parameters[$column] = $value;
+        }
+
+        $query = "SELECT * FROM {$this->table} WHERE " . implode(' AND ', $conditions);
+
+        $this->db->getquery($query);
+
+        foreach ($parameters as $key => $value) {
+            $this->db->bind(":{$key}", $value);
+        }
+
+        return array_map(fn($row) => $this->mapToEntity($row), $this->db->getrows());
+    }
+
+    public function findByOperators(array $criteria, array $operators = []): array {
+        $conditions = [];
+        $parameters = [];
+        foreach ($criteria as $column => $value) {
+            $operator = $operators[$column] ?? '=';
+            $conditions[] = "{$column} {$operator} :{$column}";
+            $parameters[$column] = $value;
+        }
+    
+        $query = "SELECT * FROM {$this->table} WHERE " . implode(' AND ', $conditions);
+
+        $this->db->getquery($query);
+    
+        foreach ($parameters as $key => $value) {
+            $this->db->bind(":{$key}", $value);
+        }
+    
+        return array_map(fn($row) => $this->mapToEntity($row), $this->db->getrows());
     }
 
     public function create(array $data): bool {
@@ -70,7 +109,7 @@ class BaseRepository implements IRepository {
         $reflection = new ReflectionClass($entity);
     
         foreach ($row as $column => $value) {
-            $property = lcfirst($column); 
+            $property = lcfirst(str_replace('_', '', ucwords($column, '_')));
 
             if ($reflection->hasProperty($property)) {
                 $prop = $reflection->getProperty($property);
@@ -83,7 +122,7 @@ class BaseRepository implements IRepository {
                 $prop->setValue($entity, $value);
             }
         }
-    
+        
         return $entity;
     }
 
