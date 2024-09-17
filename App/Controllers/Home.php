@@ -11,8 +11,12 @@ class Home extends BaseController {
       }
     
 
-    public function Index(){
-        echo("<h1>HOME<h1>");
+      public function Index(){
+        $this->View("Home/Home");
+        $this->View("Layout/Dashboard/sidebar");
+        $this->View("Layout/Dashboard/header");
+        $this->View("Layout/Dashboard/footer");
+        
+        
     }
 }
-?>

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <title>Error 404</title>
     <link rel="stylesheet" href="Public/Assets/CSS/Error/404/background.css" media="screen">
-<link rel="stylesheet" href="Public/Assets/CSS/Error/404/style.css" media="screen">
+    <link rel="stylesheet" href="Public/Assets/CSS/Error/404/style.css" media="screen">
     <script class="u-script" type="text/javascript" src="Public/Assets/JS/Error/404/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="Public/Assets/JS/Error/404/layout.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
