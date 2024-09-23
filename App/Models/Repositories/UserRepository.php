@@ -8,8 +8,8 @@ class UserRepository extends BaseRepository {
     public function __construct(DabaBaseProvider $db) {
         parent::__construct($db, Users::class);
     }
-    public function registerUser(string $email, string $hashedPassword, int $roleId): bool {
 
+    public function registerUser(string $email, string $hashedPassword, int $roleId, string $firstName = 'N/A', string $lastName = 'N/A'): bool {
         if ($this->isEmailRegistered($email)) {
             throw new Exception('El correo ya está registrado.');
         }
@@ -18,8 +18,18 @@ class UserRepository extends BaseRepository {
         $user->setEmail($email);
         $user->setPassword($hashedPassword);
         $user->setRoleId($roleId);
+        $user->setFirstName($firstName);
+        $user->setLastName($lastName);
 
-        return $this->insert($user);
+        $data = [
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'role_id' => $user->getRoleId(),
+            'first_name' => $user->getFirstName(),
+            'last_name' => $user->getLastName()
+        ];
+
+        return $this->create($data);
     }
 
     public function isEmailRegistered(string $email): bool {

@@ -156,7 +156,7 @@
 
 							<div class="row mt-3">
 								<div class="col-sm-12 text-center">
-									<a href="<?php echo RUTURL . 'IndexRegister'; ?>" class="btn btn-secondary btn-lg">Registrar</a>
+									<a href="<?php echo RUTURL . 'Register/index'; ?>" class="btn btn-secondary btn-lg">Registrar</a>
 							</div>
 
 						</div>

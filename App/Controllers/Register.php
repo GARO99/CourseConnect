@@ -1,15 +1,19 @@
 <?php
-namespace Controllers;
-
+use Libraries\BaseController;
 use Services\RegisterService;
 use Exception;
 
-class RegisterController {
+class Register extends BaseController {
 
     private $registerService;
 
     public function __construct() {
         $this->registerService = new RegisterService();
+    }
+
+
+    public function Index(){
+        $this->View("Auth/RegisterForm");      
     }
 
     public function register() {
@@ -26,7 +30,7 @@ class RegisterController {
 
             echo "Usuario registrado exitosamente.";
       
-            header('location:'.RUTLURL);
+            header('location:'.RUTURL.'Home');
 
         } catch (Exception $e) {
             echo "Error al registrar usuario: " . $e->getMessage();
