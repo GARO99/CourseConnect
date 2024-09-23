@@ -153,6 +153,12 @@
 									</div>
 								</div>
 							</form>
+
+							<div class="row mt-3">
+								<div class="col-sm-12 text-center">
+									<a href="<?php echo RUTURL . 'IndexRegister'; ?>" class="btn btn-secondary btn-lg">Registrar</a>
+							</div>
+
 						</div>
 					</div>
 				</div>

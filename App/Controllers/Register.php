@@ -1,54 +1,36 @@
 <?php
-use Libraries\DatabaseProvider;
+namespace Controllers;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Captura los datos enviados desde el formulario
-    $email = $_POST['email'];
-    $code = $_POST['code'];
-    $password = $_POST['password'];
-    $role = $_POST['role'];
+use Services\RegisterService;
+use Exception;
 
-    // Conectar a la base de datos principal
-    $db1 = new DatabaseProvider('CourseConnect');
+class RegisterController {
 
-    // Verificar si el rol ya existe en la tabla 'Role'
-    $db1->getquery("SELECT RoleId FROM Role WHERE RoleName = :roleName");
-    $db1->bind(':roleName', $role);
-    $roleData = $db1->getrow();
+    private $registerService;
 
-    if (!$roleData) {
-        // Si el rol no existe, obtener el último RoleId para generar un nuevo RoleId
-        $db1->getquery("SELECT MAX(RoleId) AS maxRoleId FROM Role");
-        $maxRoleIdResult = $db1->getrow();
-        $newRoleId = $maxRoleIdResult['maxRoleId'] + 1;
-
-        // Insertar el nuevo RoleId y RoleName en la tabla 'Role'
-        $db1->getquery("INSERT INTO Role (RoleId, RoleName) VALUES (:roleId, :roleName)");
-        $db1->bind(':roleId', $newRoleId);
-        $db1->bind(':roleName', $role);
-
-        if ($db1->execute()) {
-            $roleId = $newRoleId;
-        } else {
-            echo "Error al insertar el rol.";
-            return;
-        }
-    } else {
-        // Si el rol ya existe, obtenemos el RoleId
-        $roleId = $roleData['RoleId'];
+    public function __construct() {
+        $this->registerService = new RegisterService();
     }
 
-    // Insertar el usuario en la tabla 'Users'
-    $db1->getquery("INSERT INTO Users (UserId, RoleId, FirstName, LastName, UserName, UserPassword) VALUES (NULL, :roleId, '', '', :email, :password)");
-    $db1->bind(':roleId', $roleId);
-    $db1->bind(':email', $email);
-    $db1->bind(':password', password_hash($password, PASSWORD_DEFAULT));
+    public function register() {
+        try {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $roleId = (int)$_POST['role_id'];
 
-    // Verificar si la inserción fue exitosa
-    if ($db1->execute()) {
-        echo "Usuario registrado exitosamente.";
-    } else {
-        echo "Error al registrar el usuario.";
+            if (empty($email) || empty($password) || empty($roleId)) {
+                throw new Exception('Todos los campos son obligatorios.');
+            }
+
+            $this->registerService->registerUser($email, $password, $roleId);
+
+            echo "Usuario registrado exitosamente.";
+      
+            header('location:'.RUTLURL);
+
+        } catch (Exception $e) {
+            echo "Error al registrar usuario: " . $e->getMessage();
+        }
     }
 }
 ?>
