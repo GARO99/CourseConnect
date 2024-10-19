@@ -100,6 +100,7 @@ h6 {
     font-family: 'Inter', sans-serif
 }
 
+
 ol,
 p,
 ul {
@@ -2208,7 +2209,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 .login-menu a {
     font-size: 20px;
     font-weight: 600;
-    color: #1b00ff
+    color: #ff0000
 }
 
 .login-wrap {
