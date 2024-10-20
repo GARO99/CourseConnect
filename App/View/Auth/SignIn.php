@@ -5,6 +5,12 @@
 		<meta charset="utf-8" />
 		<title>Iniciar Sesion</title>
 
+		<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="<?php echo ASSETSURL?>Images/favicon-rojo.webp"
+		/>
 		
 
 		<!-- Mobile Specific Metas -->
@@ -19,35 +25,25 @@
 			rel="stylesheet"
 		/>
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="Public/Assets/CSS/Auth/Sing_In/core.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo ASSETSURL?>CSS/Auth/Sing_In/core.css" />
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="vendors/styles/icon-font.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="Public/Assets/CSS/Auth/Sing_In/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo ASSETSURL?>CSS/Auth/Sing_In/style.css" />
 
 
 	</head>
 	<body class="login-page">
-		<div class="login-header box-shadow">
-			<div
-				class="container-fluid d-flex justify-content-between align-items-center"
-			>
-				<div class="brand-logo">
-					<a href="login.html">
-						<img  src="Public/Assets/Images/Logo-UMB-Blog-1.png" alt="" />
-					</a>
-				</div>		
-			</div>
-		</div>
+		
 		<div
 			class="login-wrap d-flex align-items-center flex-wrap justify-content-center"
 		>
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-6 col-lg-7">
-						<img src="Public/Assets/Images/logo-umb.webp" alt="" />
+						<img src="<?php echo ASSETSURL?>Images/logo-umb.webp" alt="" />
 					</div>
 					<div class="col-md-6 col-lg-5">
 						<div class="login-box bg-white box-shadow border-radius-10">
@@ -61,7 +57,7 @@
 											<input type="radio" name="rol" id="teacher" value="2"/>
 											<div class="icon">
 												<img
-													src="Public/Assets/Images/briefcase.svg"
+													src="<?php echo ASSETSURL?>Images/briefcase.svg"
 													class="svg"
 													alt=""
 												/>
@@ -73,7 +69,7 @@
 											<input type="radio" name="rol" id="user" value="3"/>
 											<div class="icon">
 												<img
-													src="Public/Assets/Images/person.svg"
+													src="<?php echo ASSETSURL?>Images/person.svg"
 													class="svg"
 													alt=""
 												/>
@@ -85,7 +81,7 @@
 											<input type="radio" name="rol" id="admin" value="1"/>
 											<div class="icon">
 												<img
-													src="Public/Assets/Images/person.svg"
+													src="<?php echo ASSETSURL?>Images/person.svg"
 													class="svg"
 													alt=""
 												/>
@@ -143,7 +139,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="input-group mb-0">
-											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Inicar Sesion">
 										</div>
 										<div
 											class="font-16 weight-600 pt-10 pb-10 text-center"
@@ -152,6 +148,11 @@
 										</div>
 									</div>
 								</div>
+								<div class="row">
+    								<a href="<?php echo RUTURL . 'Register/index'; ?>" class="col-sm-12 text-center">
+        								<div class="btn btn-primary btn-lg btn-block ">Registrar</div>
+   									</a>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -159,9 +160,9 @@
 			</div>
 		</div>
 		<!-- js -->
-		<script src="Public/Assets/JS/Auth/Sing_In/core.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/script.min.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/process.js"></script>
-		<script src="Public/Assets/JS/Auth/Sing_In/layout-settings.js"></script>
+		<script src="<?php echo ASSETSURL?>JS/Auth/Sing_In/core.js"></script>
+		<script src="<?php echo ASSETSURL?>JS/Auth/Sing_In/script.min.js"></script>
+		<script src="<?php echo ASSETSURL?>JS/Auth/Sing_In/process.js"></script>
+		<script src="<?php echo ASSETSURL?>JS/Auth/Sing_In/layout-settings.js"></script>
 	</body>
 </html>
