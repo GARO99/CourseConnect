@@ -18,18 +18,18 @@ body .fc {
 --------------------------------------------------------------------------------------------------*/
 .fc-highlight {
   /* when user is selecting cells */
-  background: #bce8f1;
+  background: #f1c7bc;
   opacity: .3; }
 
 .fc-bgevent {
   /* default look for background events */
-  background: #8fdf82;
+  background: #271cc7;
   opacity: .3; }
 
 .fc-nonbusiness {
   /* default look for non-business-hours areas */
   /* will inherit .fc-bgevent's styles */
-  background: #d7d7d7; }
+  background: #f70606; }
 
 /* Buttons (styled <button> tags, normalized to work cross-browser)
 --------------------------------------------------------------------------------------------------*/
@@ -218,10 +218,12 @@ hr.fc-divider {
   border-style: solid;
   border-width: 1px;
   padding: 0;
+  color: #080808;
   vertical-align: top; }
 
 .fc td.fc-today {
   border-style: double;
+  background: #fff;
   /* overcome neighboring borders */ }
 
 /* Internal Nav Links
@@ -613,7 +615,7 @@ TODO: more distinction between this file and common.css
   color: #666; }
 
 .fc-unthemed td.fc-today {
-  background: #fcf8e3; }
+  background: #fce3ed; }
 
 .fc-unthemed .fc-disabled-day {
   background: #d7d7d7;
@@ -897,7 +899,8 @@ NOTE: use percentage font sizes or else old IE chokes
   /* column headers can't have as much v space */ }
 
 .fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
-  float: right; }
+  float: right;
+color: transparent; }
 
 .fc-rtl .fc-basic-view .fc-day-top .fc-day-number {
   float: left; }

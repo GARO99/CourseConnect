@@ -38,6 +38,11 @@
 			type="text/css"
 			href="<?php echo ASSETSURL?>src/plugins/datatables/css/responsive.bootstrap4.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="<?php echo ASSETSURL?>src/plugins/fullcalendar/fullcalendar.css"
+		/>
 		<link rel="stylesheet" type="text/css" href="<?php echo ASSETSURL?>CSS/styles/style.css" />
 </head>
 

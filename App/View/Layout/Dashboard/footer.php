@@ -14,4 +14,6 @@
 		<script src="<?php echo ASSETSURL?>src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
 		<script src="<?php echo ASSETSURL?>src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 		<script src="<?php echo ASSETSURL?>src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		<script src="<?php echo ASSETSURL?>src/plugins/fullcalendar/fullcalendar.min.js"></script>
+		<script src="<?php echo ASSETSURL?>script/calendar-setting.js"></script>
 		<script src="<?php echo ASSETSURL?>script/dashboard3.js"></script>
