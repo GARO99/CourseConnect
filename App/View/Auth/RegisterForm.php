@@ -95,8 +95,8 @@
 													<select id="role_id" class="form-control" name="role_id" required>
 														<option value="" disabled selected>Selecciona un rol</option>
 														<option value="1">Administrador</option>
-														<option value="2">Estudiante</option>
-														<option value="3">Profesor</option>
+														<option value="2">Profesor</option>
+														<option value="3">Estudiante</option>
 													</select>
 												</div>
 											</div>

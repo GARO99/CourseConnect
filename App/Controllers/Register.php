@@ -1,7 +1,6 @@
 <?php
 use Libraries\BaseController;
 use Services\RegisterService;
-use Exception;
 
 class Register extends BaseController {
 
@@ -10,7 +9,6 @@ class Register extends BaseController {
     public function __construct() {
         $this->registerService = new RegisterService();
     }
-
 
     public function Index(){
         $this->View("Auth/RegisterForm");      
