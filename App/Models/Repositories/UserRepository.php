@@ -1,6 +1,7 @@
 <?php
 namespace Models\Repositories;;
 
+use Exception;
 use Models\Entities\Users;
 use Libraries\DabaBaseProvider;
 
