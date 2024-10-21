@@ -15,7 +15,7 @@ class RegisterService {
     }
 
     public function registerUser(string $email, string $password, int $roleId): void {
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $hashedPassword = hash('sha256', $password);
 
         $this->userRepo->registerUser($email, $hashedPassword, $roleId);
     }
