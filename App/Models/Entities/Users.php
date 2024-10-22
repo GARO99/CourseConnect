@@ -2,15 +2,19 @@
 namespace Models\Entities;
 
 class Users {
-    public int $id;
-    public int $roleId;
-    public string $firstName;
-    public string $lastName;
-    public string $email;
-    public string $password;
+    private int $id;
+    private int $roleId;
+    private string $firstName;
+    private string $lastName;
+    private string $email;
+    private string $password;
 
     public static function getTableName(): string {
         return 'users';
+    }
+
+    public function getId(): int {
+        return $this->id;
     }
 
     public function getEmail(): string {

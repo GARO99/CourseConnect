@@ -1,10 +1,10 @@
 <?php
 
 //paramertros data base
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 define('DB_PORT', '5432');
 define('DB_USER', 'postgres');
-define('DB_PASS', '12345');
+define('DB_PASS', 'clavesupersegura');
 define('DB_NAME', 'course_connect');
 //================================
 //Rutas de la aplicacion

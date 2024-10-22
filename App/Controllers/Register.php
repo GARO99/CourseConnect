@@ -1,7 +1,7 @@
 <?php
+
 use Libraries\BaseController;
 use Services\RegisterService;
-use Exception;
 
 class Register extends BaseController {
 
@@ -23,7 +23,7 @@ class Register extends BaseController {
             $roleId = (int)$_POST['role_id'];
 
             if (empty($email) || empty($password) || empty($roleId)) {
-                throw new Exception('Todos los campos son obligatorios.');
+                throw new \Exception('Todos los campos son obligatorios.');
             }
 
             $this->registerService->registerUser($email, $password, $roleId);
@@ -32,7 +32,7 @@ class Register extends BaseController {
       
             header('location:'.RUTURL.'Home');
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo "Error al registrar usuario: " . $e->getMessage();
         }
     }

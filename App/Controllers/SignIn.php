@@ -21,15 +21,35 @@ class SignIn extends BaseController {
         if (isset($_POST['rol']) && isset($_POST['email'])
             && isset($_POST['password'])
         ){
-            $user = $this->authService->SignIn($_POST['email'],$_POST['rol'], $_POST['password']);
-            $_SESSION['session']=[
-                'userData' => $user,
-                'login'=> TRUE
-            ];
-            header('location:'.RUTURL.'Home');
+            try {
+                $user = $this->authService->SignIn($_POST['email'],$_POST['rol'], $_POST['password']);
+                $userdata = array(
+                    'id' =>$user->getId(),
+                    'role' => $this->authService->GetRolName($user->getRoleId()),
+                    'firstName'=>$user->getFirstName(),
+                    'lastName'=>$user->getLastName(),
+                    'email' => $user->getEmail()
+                  );
+          
+                $_SESSION['session']=[
+                    'userData' => $userdata,
+                    'login'=> TRUE
+                ];
+                header('location:'.RUTURL.'Home');
+            } catch (\Exception $e) {
+                $_SESSION['error'] = [
+                    'message' => $e->getMessage()
+                ];
+                header('location:'.RUTURL);
+            }
         } else {
             header('location:'.RUTURL);
         }
+    }
+
+    public function logout(){
+        unset($_SESSION['session']);
+        header('location:'.RUTURL);
     }
 }
 ?>
