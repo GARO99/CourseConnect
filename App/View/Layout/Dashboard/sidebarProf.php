@@ -23,7 +23,7 @@
 						</li>
 						<li class="dropdown">
 							<a href="https://umb.instructure.com/" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-journals"></span
+								<span class="micon bi bi-table"></span
 								><span class="mtext">Canvas</span>
 							</a>
 						</li>
@@ -37,30 +37,6 @@
 							<a href="Calendar" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-calendar4-week"></span
 								><span class="mtext">Horario</span>
-							</a>
-						</li>
-						<li>
-							<a href="Horarioideal" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Horario Ideal</span>
-							</a>
-						</li>
-						<li>
-							<a href="Historico" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clock-history"></span
-								><span class="mtext">Historico</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clipboard-plus"></span
-								><span class="mtext">Orden de Matricula</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clipboard2-check"></span
-								><span class="mtext">Registro Academino</span>
 							</a>
 						</li>
 						<li>
