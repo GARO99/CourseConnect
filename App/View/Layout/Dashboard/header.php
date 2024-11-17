@@ -1,7 +1,7 @@
     <head>
     <!-- Basic Page Info -->
         <meta charset="utf-8" />
-        <title>Pagina de Inicio</title>|
+        <title>Pagina de Inicio</title>
         <link
         rel="icon"
         type="image/png"
@@ -82,7 +82,7 @@
                             data-toggle="dropdown"
                         >
                             <span class="user-icon">
-                                <img src="vendors/images/photo1.jpg" alt="" />
+                                <img src="<?php echo ASSETSURL?>Images/Predefinida.png" alt="" />
                             </span>
                             <span class="user-name">
                                 <?php echo $_SESSION['session']['userData']['firstName'].' '.$_SESSION['session']['userData']['lastName'] ?>
@@ -92,11 +92,8 @@
                         <div
                             class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
                         >
-                            <a class="dropdown-item" href="profile.html"
+                            <a class="dropdown-item" href="Profile"
                                 ><i class="dw dw-user1"></i> Profile</a
-                            >
-                            <a class="dropdown-item" href="faq.html"
-                                ><i class="dw dw-help"></i> Help</a
                             >
                             <a class="dropdown-item" href="<?php echo RUTURL.'SignIn/logout' ?>"
                                 ><i class="dw dw-logout"></i> Log Out</a

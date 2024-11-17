@@ -5,7 +5,7 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
 								<div class="title">
-									<h4>Horario Ideal</h4>
+									<h4>Horario Ideal (Nocturna)</h4>
 								</div>	
 							</div>
 							<div class="col-md-6 col-sm-12 text-right">
@@ -16,11 +16,11 @@
 										role="button"
 										data-toggle="dropdown"
 									>
-									Jornada
+									Período Acádemico
 									</a>
 									<div class="dropdown-menu dropdown-menu-right">
-										<a class="dropdown-item" href="Horarioideal">Diurno</a>
-										<a class="dropdown-item" href="Horarioidenoct">Nocturna</a>
+										<a class="dropdown-item" href="Horarioideal">2024</a>
+										<a class="dropdown-item" href="Horarioidenoct">2023</a>
 									</div>
 								</div>
 							</div>

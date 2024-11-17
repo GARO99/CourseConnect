@@ -17,6 +17,7 @@
 		<script src="<?php echo ASSETSURL?>src/plugins/fullcalendar/fullcalendar.min.js"></script>
 		<script src="<?php echo ASSETSURL?>script/calendar-setting.js"></script>
 		<script src="<?php echo ASSETSURL?>script/dashboard3.js"></script>
+		<script src="<?php echo ASSETSURL?>src/plugins/cropperjs/dist/cropper.js"></script>
 
 		<script src="<?php echo ASSETSURL?>src/plugins/datatables/js/dataTables.buttons.min.js"></script>
 		<script src="<?php echo ASSETSURL?>src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
