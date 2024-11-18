@@ -13,9 +13,7 @@
 					
 					<!-- Export Datatable start -->
 					<div class="card-box mb-30">
-						<div class="pd-20">
-							<h4 class="h4" style="color: RED;">Cada falla equivale a una 1 hora de clase</h4>
-						</div>
+
 						<div class="pb-20">
 							<table
 								class="table hover data-table-export nowrap"
