@@ -1,7 +1,7 @@
 <?php
 use Libraries\BaseController;
 
-class Calendar extends BaseController {
+class HorarioIdeal extends BaseController {
 
     public function __construct(){
         session_start();
@@ -12,15 +12,8 @@ class Calendar extends BaseController {
     
 
       public function Index(){
-        $this->View("Home/Calendar");
-        switch($_SESSION['session']['userData']['role']){
-          case 'Profesor':
-            $this->View("Layout/Dashboard/sidebarProf");
-            break;
-          case 'Estudiante':
-            $this->View("Layout/Dashboard/sidebar");
-            break;
-        }
+        $this->View("Home/Horarioideal");
+        $this->View("Layout/Dashboard/sidebar");   
         $this->View("Layout/Dashboard/header");
         $this->View("Layout/Dashboard/footer");
         

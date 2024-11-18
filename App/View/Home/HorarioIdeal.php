@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<div class="title">
-					<h4>Horario</h4>
+					<h4>Horario Ideal</h4>
 				</div>
 				
 			</div>

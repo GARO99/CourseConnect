@@ -43,6 +43,11 @@
             type="text/css"
             href="<?php echo ASSETSURL?>src/plugins/fullcalendar/fullcalendar.css"
         />
+        <link
+			rel="stylesheet"
+			type="text/css"
+			href="<?php echo ASSETSURL?>src/plugins/datatables/css/responsive.bootstrap4.min.css"
+		/>
         <link rel="stylesheet" type="text/css" href="<?php echo ASSETSURL?>CSS/styles/style.css" />
     </head>
 
@@ -67,45 +72,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="user-notification">
-                    <div class="dropdown">
-                        <a
-                            class="dropdown-toggle no-arrow"
-                            href="#"
-                            role="button"
-                            data-toggle="dropdown"
-                        >
-                            <i class="icon-copy dw dw-notification"></i>
-                            <span class="badge notification-active"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="notification-list mx-h-350 customscroll">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <img src="vendors/images/img.jpg" alt="" />
-                                            <h3>John Doe</h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit, sed...
-                                            </p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="vendors/images/photo1.jpg" alt="" />
-                                            <h3>Lea R. Frith</h3>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                elit, sed...
-                                            </p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="user-info-dropdown">
                     <div class="dropdown">
                         <a

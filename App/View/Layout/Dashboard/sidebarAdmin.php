@@ -21,46 +21,28 @@
 								><span class="mtext">Inicio</span>
 							</a>
 						</li>
-						<li class="dropdown">
-							<a href="https://umb.instructure.com/" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-journals"></span
-								><span class="mtext">Canvas</span>
-							</a>
-						</li>
-						<li class="dropdown">
-							<a href="Asignatura" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-table"></span
-								><span class="mtext">Asignaturas</span>
-							</a>
-						</li>
 						<li>
-							<a href="Calendar" class="dropdown-toggle no-arrow">
+							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Horario</span>
-							</a>
-						</li>
-						<li>
-							<a href="Horarioideal" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Horario Ideal</span>
-							</a>
-						</li>
-						<li>
-							<a href="Historico" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clock-history"></span
-								><span class="mtext">Historico</span>
+								><span class="mtext">No se </span>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-clipboard-plus"></span
-								><span class="mtext">Orden de Matricula</span>
+								><span class="mtext">Que puede </span>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-clipboard2-check"></span
-								><span class="mtext">Registro Academino</span>
+								><span class="mtext">Tener el Admin</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-clipboard2-check"></span
+								><span class="mtext">a mimir</span>
 							</a>
 						</li>
 						<li>
