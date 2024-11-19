@@ -16,6 +16,9 @@ class RegisterService {
 
     public function registerUser(string $email, string $password, int $roleId): void {
        // $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        if (!preg_match("/^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)*umb\.+edu\.+co$/", $email)) {
+            throw new Exception('El correo debe ser válido para la institución');
+        }
         $hashedPassword = hash('sha256', $password);
         $this->userRepo->registerUser($email, $hashedPassword, $roleId);
     }

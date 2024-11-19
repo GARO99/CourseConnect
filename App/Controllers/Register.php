@@ -33,7 +33,10 @@ class Register extends BaseController {
             header('location:'.RUTURL.'Home');
 
         } catch (\Exception $e) {
-            echo "Error al registrar usuario: " . $e->getMessage();
+            $_SESSION['error'] = [
+                'message' => $e->getMessage()
+            ];
+            header('location:'.RUTURL.'Register');
         }
     }
 }
