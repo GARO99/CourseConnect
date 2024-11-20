@@ -65,6 +65,12 @@
 							<div class="login-title">
 								<h2 class="text-center text-primary">Registrar</h2>
 							</div>
+                            <?php if (isset($_SESSION['error'])): ?>
+                                <div class="alert-danger pd-10">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                    <p><?php echo $_SESSION['error']['message'];unset($_SESSION['error']) ?></p>
+                                </div>
+                            <?php endif; ?>
 							<form  action="<?php echo htmlspecialchars(RUTURL.'Register/register');?>" method="post" autocomplete="off">
 							<div class="form-wrap max-width-600 mx-auto">
 											<div class="form-group row">
@@ -95,8 +101,8 @@
 													<select id="role_id" class="form-control" name="role_id" required>
 														<option value="" disabled selected>Selecciona un rol</option>
 														<option value="1">Administrador</option>
-														<option value="2">Estudiante</option>
-														<option value="3">Profesor</option>
+														<option value="2">Profesor</option>
+														<option value="3">Estudiante</option>
 													</select>
 												</div>
 											</div>

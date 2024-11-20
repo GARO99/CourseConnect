@@ -22,6 +22,10 @@ class AuthService {
         int $roleid,
         string $password
     ): Users {
+        if (!preg_match("/^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)*umb\.+edu\.+co$/", $email)) {
+            throw new Exception('El correo debe ser válido para la institución');
+        }
+
         $users = $this->userRepo->findBy(
             [
                 'email' => $email,

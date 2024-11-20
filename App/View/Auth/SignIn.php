@@ -72,7 +72,7 @@
                                             Docente
                                         </label>
                                         <label class="btn">
-                                            <input type="radio" name="rol" id="user" value="3"/>
+                                            <input type="radio" name="rol" id="user" value="3" checked/>
                                             <div class="icon">
                                                 <img
                                                     src="<?php echo ASSETSURL?>Images/person.svg"
