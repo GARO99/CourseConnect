@@ -24,25 +24,13 @@
 						<li>
 							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">No se </span>
+								><span class="mtext">Configurar Horario</span>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-clipboard-plus"></span
-								><span class="mtext">Que puede </span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clipboard2-check"></span
-								><span class="mtext">Tener el Admin</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-clipboard2-check"></span
-								><span class="mtext">a mimir</span>
+								><span class="mtext">Configuracion Asignaturas</span>
 							</a>
 						</li>
 						<li>
