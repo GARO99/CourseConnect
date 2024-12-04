@@ -15,6 +15,6 @@ class Crear_Asig extends BaseController {
         $this->View("Layout/Dashboard/sidebarAdmin");   
         $this->View("Layout/Dashboard/header");
         $this->View("Layout/Dashboard/footer");
-        
+       
     }
 }

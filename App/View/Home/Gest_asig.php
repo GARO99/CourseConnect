@@ -13,7 +13,7 @@
                         <input class="form-control" type="text" name="nombre" placeholder="Ingrese el nombre" />
                     </div>
                     <div class="form-group">
-                        <label>Instructor</label>
+                        <label>Instructor </label>
                         <input class="form-control" type="text" name="instructor" placeholder="Ingrese el instructor" />
                     </div>
                     <div class="form-group">

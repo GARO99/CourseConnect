@@ -24,7 +24,6 @@
                         <label>Cantidad Grupos</label>
                         <input class="form-control" type="number" name="grupos" placeholder="Ingrese numero de grupos" />
                     </div>
-
                     <div class="form-group mb-0">
                         <input type="submit" class="btn btn-primary" value="Crear asignatura" />
                         <input type="reset" class="btn btn-primary" value="Cancelar" id="cancel-btn" />

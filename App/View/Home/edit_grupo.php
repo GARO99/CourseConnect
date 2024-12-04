@@ -28,7 +28,6 @@
                         <label>Cantidad de Horas</label>
                         <input class="form-control" type="text" name="cantidad_horas" placeholder="Ingrese la cantidad de horas" />
                     </div>
-
                     <!-- Contenedor dinámico para horarios -->
                     <div id="schedule-container">
                         <div class="form-group">
