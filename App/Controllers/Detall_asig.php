@@ -12,9 +12,9 @@ class Detall_asig extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/Detall_asig");
         $this->View("Layout/Dashboard/sidebarAdmin");   
-        $this->View("Layout/Dashboard/header");
         $this->View("Layout/Dashboard/footer");
         
     }

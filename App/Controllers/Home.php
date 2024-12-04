@@ -12,6 +12,7 @@ class Home extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/Home");
         switch($_SESSION['session']['userData']['role']){
           case 'Administrador':
@@ -24,7 +25,7 @@ class Home extends BaseController {
             $this->View("Layout/Dashboard/sidebar");
             break;
         }
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
         
         

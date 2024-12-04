@@ -14,7 +14,12 @@
                     </div>
                     <div class="form-group">
                         <label>Instructor </label>
-                        <input class="form-control" type="text" name="instructor" placeholder="Ingrese el instructor" />
+                        <select class="form-control" name="instructor" id="instructor">
+                            <option value="" disabled selected>Selecciona instructor</option>
+                            <?php foreach ($data[0] as $row): ?>
+                                <option value=""><?php echo $row->instructor; ?></option>
+                            <?php endforeach; ?>   
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Salon</label>
@@ -26,14 +31,14 @@
                     </div>
                     <div class="form-group">
                         <label>Cantidad de Horas</label>
-                        <input class="form-control" type="text" name="cantidad_horas" placeholder="Ingrese la cantidad de horas" />
+                        <input class="form-control" type="number" name="cantidad_horas" placeholder="Ingrese la cantidad de horas" />
                     </div>
 
                     <!-- Contenedor dinámico para horarios -->
                     <div id="schedule-container">
                         <div class="form-group">
                             <label>Día</label>
-                            <input class="form-control" type="text" name="dia[]" placeholder="Ingrese el día" />
+                            <input class="form-control" type="date" name="dia[]" placeholder="Ingrese el día" />
                         </div>
                         <div class="form-group">
                             <label>Hora de inicio</label>

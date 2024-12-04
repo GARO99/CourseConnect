@@ -14,11 +14,21 @@
                     </div>
                     <div class="form-group">
                         <label>Facultad</label>
-                        <input class="form-control" type="text" name="facultad" placeholder="Ingrese la Facultad" />
+                        <select class="form-control" name="Facultad" id="Facultad">
+                            <option value="" disabled selected>Selecciona Facultad</option>
+                            <?php foreach ($data[0] as $row): ?>
+                                <option value=""><?php echo $row->faculty_name; ?></option>
+                            <?php endforeach; ?>   
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Unidad</label>
-                        <input class="form-control" type="text" name="unidad" placeholder="Ingrese la Unidad" />
+                        <select class="form-control" name="instructor" id="instructor">
+                            <option value="" disabled selected>Selecciona instructor</option>
+                            <?php foreach ($data[0] as $row): ?>
+                                <option value=""><?php echo $row->instructor; ?></option>
+                            <?php endforeach; ?>   
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Cantidad Grupos</label>

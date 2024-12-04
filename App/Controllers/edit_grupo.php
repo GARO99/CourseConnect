@@ -12,9 +12,10 @@ class edit_grupo extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/edit_grupo");
         $this->View("Layout/Dashboard/sidebarAdmin");   
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
           
     }

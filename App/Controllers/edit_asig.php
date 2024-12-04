@@ -12,9 +12,9 @@ class edit_asig extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/edit_asig");
         $this->View("Layout/Dashboard/sidebarAdmin");   
-        $this->View("Layout/Dashboard/header");
         $this->View("Layout/Dashboard/footer");
        
     }

@@ -26,36 +26,23 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td class="table-plus">Gloria F. Mead</td>
-										<td>25</td>
-										<td>Sagittarius</td>
-										<td style="min-width:185px !important">
-                                          <div class="trans">
-                                            <div class="btn-toolbar">
-                                              <div class="btn-group btn-group">
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin:3px ; background-color:transparent; border-color:green" onclick="window.location.href='Detall_asig'"><i class="fa fa-fw fa-eye text-green"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_asig'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i><a href="#"></a></button>
-                                            </div>
-                                          </div>
-                                        </td>
-									</tr>
-									<tr>
-										<td class="table-plus">Andrea J. Cagle</td>
-										<td>30</td>
-										<td>Gemini</td>
-										<td style="min-width:185px !important">
-                                          <div class="trans">
-                                            <div class="btn-toolbar">
-                                              <div class="btn-group btn-group">
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin:3px ; background-color:transparent; border-color:green" onclick="window.location.href='Detall_asig'"><i class="fa fa-fw fa-eye text-green"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_asig'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i></button>
-                                            </div>
-                                          </div>
-                                        </td>
-									</tr>
+									<?php foreach ($data[0] as $row): ?>
+										<tr>
+											<td class="table-plus"><?php echo $row->signature_name; ?></td>
+											<td><?php echo $row->academic_period; ?></td>
+											<td><?php echo $row->faculty_name; ?></td>
+											<td style="min-width:185px !important">
+                                          	<div class="trans">
+                                            	<div class="btn-toolbar">
+                                              	<div class="btn-group btn-group">
+                                                	<button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin:3px ; background-color:transparent; border-color:green" onclick="window.location.href='Detall_asig'"><i class="fa fa-fw fa-eye text-green"></i></button>
+                                                	<button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_asig'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
+                                                	<button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i><a href="#"></a></button>
+                                            	</div>
+                                          	</div>
+                                        	</td>
+										</tr>
+									<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>

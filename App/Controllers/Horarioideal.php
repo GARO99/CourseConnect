@@ -12,9 +12,10 @@ class HorarioIdeal extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/Horarioideal");
         $this->View("Layout/Dashboard/sidebar");   
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
         
         
