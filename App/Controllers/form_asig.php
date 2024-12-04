@@ -1,7 +1,7 @@
 <?php
 use Libraries\BaseController;
 
-class HorarioIdeal extends BaseController {
+class form_asig extends BaseController {
 
     public function __construct(){
         session_start();
@@ -13,11 +13,10 @@ class HorarioIdeal extends BaseController {
 
       public function Index(){
         $this->View("Layout/Dashboard/header");
-        $this->View("Home/Horarioideal");
-        $this->View("Layout/Dashboard/sidebar");   
+        $this->View("Home/form_asig");
+        $this->View("Layout/Dashboard/sidebarAdmin");   
 
         $this->View("Layout/Dashboard/footer");
-        
-        
+          
     }
 }

@@ -12,6 +12,7 @@ class Asignatura extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         switch($_SESSION['session']['userData']['role']){
             case 'Profesor':
               $this->View("Home/AsignaturaProf");
@@ -22,7 +23,7 @@ class Asignatura extends BaseController {
               $this->View("Layout/Dashboard/sidebar");
               break;
           }
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
         
         

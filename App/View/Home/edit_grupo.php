@@ -4,7 +4,7 @@
             <div class="pd-20 card-box mb-30">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Crear grupo</h4>
+                        <h4 class="text-blue h4">Editar grupo</h4>
                     </div>
                 </div>
                 <form id="main-form">
@@ -13,13 +13,8 @@
                         <input class="form-control" type="text" name="nombre" placeholder="Ingrese el nombre" />
                     </div>
                     <div class="form-group">
-                        <label>Instructor </label>
-                        <select class="form-control" name="instructor" id="instructor">
-                            <option value="" disabled selected>Selecciona instructor</option>
-                            <?php foreach ($data[0] as $row): ?>
-                                <option value=""><?php echo $row->instructor; ?></option>
-                            <?php endforeach; ?>   
-                        </select>
+                        <label>Instructor</label>
+                        <input class="form-control" type="text" name="instructor" placeholder="Ingrese el instructor" />
                     </div>
                     <div class="form-group">
                         <label>Salon</label>
@@ -31,14 +26,13 @@
                     </div>
                     <div class="form-group">
                         <label>Cantidad de Horas</label>
-                        <input class="form-control" type="number" name="cantidad_horas" placeholder="Ingrese la cantidad de horas" />
+                        <input class="form-control" type="text" name="cantidad_horas" placeholder="Ingrese la cantidad de horas" />
                     </div>
-
                     <!-- Contenedor dinámico para horarios -->
                     <div id="schedule-container">
                         <div class="form-group">
                             <label>Día</label>
-                            <input class="form-control" type="date" name="dia[]" placeholder="Ingrese el día" />
+                            <input class="form-control" type="text" name="dia[]" placeholder="Ingrese el día" />
                         </div>
                         <div class="form-group">
                             <label>Hora de inicio</label>
@@ -56,7 +50,7 @@
                     <br>
 
                     <div class="form-group mb-0">
-                        <input type="submit" class="btn btn-primary" value="Crear Materia" />
+                        <input type="submit" class="btn btn-primary" value="Editar Grupo" />
                         <input type="reset" class="btn btn-primary" value="Cancelar" id="cancel-btn" />
                     </div>
                 </form>

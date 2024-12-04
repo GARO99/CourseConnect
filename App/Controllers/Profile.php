@@ -12,6 +12,7 @@ class Profile extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");v
         $this->View("Home/Profile");
         switch($_SESSION['session']['userData']['role']){
           case 'Administrador':
@@ -24,7 +25,7 @@ class Profile extends BaseController {
             $this->View("Layout/Dashboard/sidebar");
             break;
         }
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
         
         

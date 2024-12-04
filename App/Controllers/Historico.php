@@ -12,9 +12,10 @@ class Historico extends BaseController {
     
 
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/Historico");
         $this->View("Layout/Dashboard/sidebar");   
-        $this->View("Layout/Dashboard/header");
+
         $this->View("Layout/Dashboard/footer");
         
         

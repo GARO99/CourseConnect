@@ -28,7 +28,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
+							<a href="form_asig" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-clipboard-plus"></span
 								><span class="mtext">Crear Asignaturas</span>
 							</a>
@@ -36,8 +36,8 @@
 						<li>
 							<div class="dropdown-divider"></div>
 						</li>
+						
 					</ul>
 				</div>
 			</div>
 		</div>
-		

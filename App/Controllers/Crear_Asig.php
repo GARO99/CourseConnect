@@ -11,10 +11,10 @@ class Crear_Asig extends BaseController {
       }
     
       public function Index(){
+        $this->View("Layout/Dashboard/header");
         $this->View("Home/Crear_Asig");
         $this->View("Layout/Dashboard/sidebarAdmin");   
-        $this->View("Layout/Dashboard/header");
         $this->View("Layout/Dashboard/footer");
-        
+       
     }
 }
