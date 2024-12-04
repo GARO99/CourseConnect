@@ -55,19 +55,16 @@ INSERT INTO academic_program (unity_id, academic_program_name) VALUES
 (3, 'occupational therapy'),
 (4, 'speech therapy');
 
--- 7. Insertar roles (asumimos que ya existe un rol para estudiantes)
-INSERT INTO role (role_name) VALUES ('Student');
-
 -- 8. Insertar usuarios con rol de estudiante
 INSERT INTO users (role_id, first_name, last_name, email, password) VALUES
-(1, 'Alice', 'Smith', 'alice@umb.edu.co', '12345678'),
-(1, 'Bob', 'Brown', 'bob@umb.edu.co', '12345678'),
-(1, 'Charlie', 'Johnson', 'charlie@umb.edu.co', '12345678'),
-(1, 'Diana', 'Taylor', 'diana@umb.edu.co', '12345678');
+(3, 'Alice', 'Smith', 'alice@umb.edu.co', '12345678'),
+(3, 'Bob', 'Brown', 'bob@umb.edu.co', '12345678'),
+(3, 'Charlie', 'Johnson', 'charlie@umb.edu.co', '12345678'),
+(3, 'Diana', 'Taylor', 'diana@umb.edu.co', '12345678');
 
 -- 9. Insertar estudiantes (1 por usuario creado)
 INSERT INTO studious (id, user_id, academic_program_id) VALUES
-('S001', 1, 1), -- Alice in Biology Program
-('S002', 2, 2), -- Bob in Chemistry Program
-('S003', 3, 3), -- Charlie in History Program
-('S004', 4, 4); -- Diana in Literature Program
+('1000000000', 1, 1), -- Alice in Biology Program
+('1000000001', 2, 2), -- Bob in Chemistry Program
+('1000000002', 3, 3), -- Charlie in History Program
+('1000000003', 4, 4); -- Diana in Literature Program
