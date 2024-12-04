@@ -4,7 +4,7 @@
             <div class="pd-20 card-box mb-30">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Crear grupo</h4>
+                        <h4 class="text-blue h4">Editar grupo</h4>
                     </div>
                 </div>
                 <form id="main-form">
@@ -51,7 +51,7 @@
                     <br>
 
                     <div class="form-group mb-0">
-                        <input type="submit" class="btn btn-primary" value="Crear Materia" />
+                        <input type="submit" class="btn btn-primary" value="Editar Grupo" />
                         <input type="reset" class="btn btn-primary" value="Cancelar" id="cancel-btn" />
                     </div>
                 </form>

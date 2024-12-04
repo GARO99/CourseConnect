@@ -5,7 +5,7 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-12">
 								<div class="title">
-									<h4 style="color: RED;">Crear Asignatura</h4>
+									<h4 style="color: RED;">Gestionar Asignatura</h4>
 								</div>
 							</div>
 						</div>
@@ -35,7 +35,7 @@
                                             <div class="btn-toolbar">
                                               <div class="btn-group btn-group">
                                                 <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin:3px ; background-color:transparent; border-color:green" onclick="window.location.href='Detall_asig'"><i class="fa fa-fw fa-eye text-green"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location=''"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
+                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_asig'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
                                                 <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i><a href="#"></a></button>
                                             </div>
                                           </div>
@@ -50,7 +50,7 @@
                                             <div class="btn-toolbar">
                                               <div class="btn-group btn-group">
                                                 <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin:3px ; background-color:transparent; border-color:green" onclick="window.location.href='Detall_asig'"><i class="fa fa-fw fa-eye text-green"></i></button>
-                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location=''"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
+                                                <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_asig'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
                                                 <button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i></button>
                                             </div>
                                           </div>
@@ -63,4 +63,3 @@
 				</div>
 			</div>
 		</div>
-        

@@ -28,6 +28,7 @@
                                         <th>Dias</th>
                                         <th>Hora Inicio</th>
                                         <th>Hora Final</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -54,6 +55,10 @@
                                                 <tr><td>3 pm</td></tr>
                                             </table>
                                         </td>
+										<td>
+										<button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:#f39c12" onclick="window.location.href='edit_grupo'"><i class="fa fa-fw fa-pencil-square-o text-yellow"></i></button>
+										<button type="button" class="btn btn-success" style="width: 50px; border-radius: 3px; margin: 3px; background-color:transparent; border-color:red" onclick="window.location=''"><i class="fa fa-fw fa-trash text-orange"></i></button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
