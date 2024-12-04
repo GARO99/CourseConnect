@@ -68,3 +68,34 @@ INSERT INTO studious (id, user_id, academic_program_id) VALUES
 ('1000000001', 3, 2), -- Bob in Chemistry Program
 ('1000000002', 4, 3), -- Charlie in History Program
 ('1000000003', 5, 4); -- Diana in Literature Program
+
+-- 10. Insertar usuarios con rol de profesor
+INSERT INTO users (role_id, first_name, last_name, email, password) VALUES
+(2, 'Eve', 'Anderson', 'eve.anderson@umb.edu.co', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f'),
+(2, 'Frank', 'Harris', 'frank.harris@umb.edu.co', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f'),
+(2, 'Grace', 'Lee', 'grace.lee@umb.edu.co', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f'),
+(2, 'Henry', 'Young', 'henry.young@umb.edu.co', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f');
+
+-- 12. Insertar asignaturas
+INSERT INTO signature (unity_id, signature_name) VALUES
+(1, 'Introduction to Software Engineering'),
+(1, 'Advanced Programming'),
+(2, 'Human-Computer Interaction'),
+(2, 'Digital Systems Design');
+
+-- 11. Insertar registros en la tabla instructor
+INSERT INTO instructor (id, user_id, signature_id) VALUES
+('2000000000', 6, 1), -- Eve enseña la asignatura 1
+('2000000001', 7, 2), -- Frank enseña la asignatura 2
+('2000000002', 8, 3), -- Grace enseña la asignatura 3
+('2000000003', 9, 4); -- Henry enseña la asignatura 4
+
+-- 13. Insertar grupos de asignatura
+INSERT INTO signature_group (academic_period_id, instructor_id, signature_id, available_places, group_name) VALUES
+(1, '2000000000', 1, 30, 'Group A'), -- Grupo de Introduction to Software Engineering
+(1, '2000000000', 1, 25, 'Group B'), -- Otro grupo de la misma asignatura
+(1, '2000000001', 2, 20, 'Group C'), -- Grupo de Advanced Programming
+(1, '2000000002', 3, 25, 'Group D'), -- Grupo de Human-Computer Interaction
+(2, '2000000003', 4, 30, 'Group E'), -- Grupo de Digital Systems Design
+(2, '2000000003', 4, 20, 'Group F'); -- Otro grupo de la misma asignatura
+
