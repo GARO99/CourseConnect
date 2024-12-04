@@ -97,7 +97,7 @@ INSERT INTO signature_group (academic_period_id, instructor_id, signature_id, av
 (1, '2000000001', 2, 20, 'Group C'), -- Grupo de Advanced Programming
 (2, '2000000002', 3, 25, 'Group D'), -- Grupo de Human-Computer Interaction
 (2, '2000000003', 4, 30, 'Group E'), -- Grupo de Digital Systems Design
-(2, '2000000003', 4, 20, 'Group F'); -- Otro grupo de la misma asignatura
+(2, '2000000003', 4, 20, 'Group F'), -- Otro grupo de la misma asignatura
 (2, '2000000003', 1, 20, 'Group G'), 
 (2, '2000000003', 2, 30, 'Group H'), 
 (2, '2000000003', 3, 20, 'Group I'), 
