@@ -99,3 +99,45 @@ INSERT INTO signature_group (academic_period_id, instructor_id, signature_id, av
 (2, '2000000003', 4, 30, 'Group E'), -- Grupo de Digital Systems Design
 (2, '2000000003', 4, 20, 'Group F'); -- Otro grupo de la misma asignatura
 
+-- 14. Insertar horarios para los grupos de asignatura
+INSERT INTO signature_group_schedule (signature_group_id, classroom_id, start_hour, end_hour, class_day) VALUES
+-- Horarios para Group A
+(1, 1, '08:00:00', '10:00:00', 1), -- Lunes
+(1, 1, '08:00:00', '10:00:00', 3), -- Miércoles
+
+-- Horarios para Group B
+(2, 2, '10:00:00', '12:00:00', 2), -- Martes
+(2, 2, '10:00:00', '12:00:00', 4), -- Jueves
+
+-- Horarios para Group C
+(3, 3, '14:00:00', '16:00:00', 1), -- Lunes
+(3, 3, '14:00:00', '16:00:00', 3), -- Miércoles
+
+-- Horarios para Group D
+(4, 4, '16:00:00', '18:00:00', 2), -- Martes
+(4, 4, '16:00:00', '18:00:00', 4), -- Jueves
+
+-- Horarios para Group E
+(5, 5, '09:00:00', '11:00:00', 5), -- Viernes
+(5, 5, '09:00:00', '11:00:00', 6), -- Sábado
+
+-- Horarios para Group F
+(6, 6, '11:00:00', '13:00:00', 5), -- Viernes
+(6, 6, '11:00:00', '13:00:00', 6); -- Sábado
+
+
+-- 15. Inscribir estudiantes en grupos de asignatura
+INSERT INTO signature_inscribed (studious_id, signature_group_id) VALUES
+-- Estudiante Alice inscrito en Group A
+('1000000000', 1), 
+-- Estudiante Bob inscrito en Group B
+('1000000001', 2), 
+-- Estudiante Charlie inscrito en Group C
+('1000000002', 3), 
+-- Estudiante Diana inscrito en Group D
+('1000000003', 4), 
+-- Inscripciones adicionales para variar
+('1000000000', 5), -- Alice también inscrita en Group E
+('1000000001', 6), -- Bob también inscrito en Group F
+('1000000002', 5), -- Charlie también inscrito en Group E
+('1000000003', 6); -- Diana también inscrita en Group F
