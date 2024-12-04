@@ -24,9 +24,6 @@ class SignatureInscribed {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
 
     public function setStudiousId(string $studiousId): void {
         $this->studiousId = $studiousId;

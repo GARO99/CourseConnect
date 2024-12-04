@@ -31,9 +31,6 @@ class AcademicPeriod {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
 
     public function setDescription(string $description): void {
         $this->description = $description;

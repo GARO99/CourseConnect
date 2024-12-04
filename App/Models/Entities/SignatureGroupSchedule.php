@@ -41,9 +41,6 @@ class SignatureGroupSchedule {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
 
     public function setSignatureGroupId(int $signatureGroupId): void {
         $this->signatureGroupId = $signatureGroupId;

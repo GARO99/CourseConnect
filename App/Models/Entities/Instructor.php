@@ -24,9 +24,6 @@ class Instructor {
     }
 
     // Setters
-    public function setId(string $id): void {
-        $this->id = $id;
-    }
 
     public function setUserId(int $userId): void {
         $this->userId = $userId;

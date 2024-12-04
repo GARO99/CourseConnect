@@ -19,9 +19,6 @@ class Building {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
 
     public function setBuildingName(string $buildingName): void {
         $this->buildingName = $buildingName;

@@ -39,9 +39,6 @@ class SignatureGroup {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
 
     public function setAcademicPeriodId(int $academicPeriodId): void {
         $this->academicPeriodId = $academicPeriodId;

@@ -24,9 +24,7 @@ class Classroom {
     }
 
     // Setters
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
+
 
     public function setBuildingId(int $buildingId): void {
         $this->buildingId = $buildingId;
