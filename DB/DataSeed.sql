@@ -100,11 +100,11 @@ INSERT INTO signature_group (academic_period_id, instructor_id, signature_id, av
 (2, '2000000003', 4, 20, 'Group F'), -- Otro grupo de la misma asignatura
 (2, '2000000003', 1, 20, 'Group G'), 
 (2, '2000000003', 2, 30, 'Group H'), 
-(2, '2000000003', 3, 20, 'Group I'), 
+(2, '2000000003', 3, 20, 'Group I'), --
 (2, '2000000003', 4, 30, 'Group J'), 
 (2, '2000000003', 1, 20, 'Group K'), 
 (2, '2000000003', 3, 35, 'Group L'), 
-(2, '2000000003', 4, 30, 'Group M'); 
+(2, '2000000003', 4, 20, 'Group M'); 
 
 -- 14. Insertar horarios para los grupos de asignatura
 INSERT INTO signature_group_schedule (signature_group_id, classroom_id, start_hour, end_hour, class_day) VALUES
