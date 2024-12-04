@@ -2,8 +2,38 @@
 namespace Models\Entities;
 
 class AcademicProgram {
-    public int $id;
-    public int $unityId;
-    public string $academicProgramName;
+    private int $id;
+    private int $unityId;
+    private string $academicProgramName;
+
+    public static function getTableName(): string {
+        return 'academic_programs';
+    }
+
+    // Getters
+    public function getId(): int {
+        return $this->id;
+    }
+
+    public function getUnityId(): int {
+        return $this->unityId;
+    }
+
+    public function getAcademicProgramName(): string {
+        return $this->academicProgramName;
+    }
+
+    // Setters
+    public function setId(int $id): void {
+        $this->id = $id;
+    }
+
+    public function setUnityId(int $unityId): void {
+        $this->unityId = $unityId;
+    }
+
+    public function setAcademicProgramName(string $academicProgramName): void {
+        $this->academicProgramName = $academicProgramName;
+    }
 }
 ?>
