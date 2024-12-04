@@ -24,13 +24,13 @@
 						<li>
 							<a href="Crear_Asig" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Crear Asignatura</span>
+								><span class="mtext">Gestionar Asignatura</span>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-clipboard-plus"></span
-								><span class="mtext">Configuracion Asignaturas</span>
+								><span class="mtext">Crear Asignaturas</span>
 							</a>
 						</li>
 						<li>
