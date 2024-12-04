@@ -109,5 +109,6 @@
                 <input class="form-control" type="text" name="hora_final[]" placeholder="Ingrese la hora final" />
             </div>
         `;
+        
     });
 </script>
