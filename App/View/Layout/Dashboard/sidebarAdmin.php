@@ -22,9 +22,9 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="dropdown-toggle no-arrow">
+							<a href="Crear_Asig" class="dropdown-toggle no-arrow">
 								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Configurar Horario</span>
+								><span class="mtext">Crear Asignatura</span>
 							</a>
 						</li>
 						<li>
